@@ -31,7 +31,7 @@ abstract public class Plane {
         int result = this.maxLoadCapacity;
         return result;
     }
-
+      //todo
     @Override
     public String toString() {
         return "Plane{" +
@@ -41,6 +41,9 @@ abstract public class Plane {
                 ", maxLoadCapacity=" + maxLoadCapacity +
                 '}';
     }
+
+
+    ///////I don't wan't
 
     @Override
     public boolean equals(Object o) {
