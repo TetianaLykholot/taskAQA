@@ -37,7 +37,7 @@ abstract public class Plane {
         return "Plane{" +
                 "model='" + model + '\'' +
                 ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
+                ", maxFlightDist        ance=" + maxFlightDistance +
                 ", maxLoadCapacity=" + maxLoadCapacity +
                 '}';
     }
