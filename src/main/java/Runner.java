@@ -3,11 +3,18 @@ import Planes.PassengerPlane;
 import Planes.Plane;
 import models.MilitaryType;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Runner {
-    static List<Plane> planes = Arrays.asList(
+
+
+    static List<Plane> planesBeforeSerialization = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),
             new PassengerPlane("Boeing-747", 980, 16100, 70500, 242),
@@ -22,10 +29,22 @@ public class Runner {
             new MilitaryPlane("F-15", 1500, 12000, 10000, MilitaryType.FIGHTER),
             new MilitaryPlane("F-22", 1550, 13000, 11000, MilitaryType.FIGHTER),
             new MilitaryPlane("C-130 Hercules", 650, 5000, 110000, MilitaryType.TRANSPORT)
+
+
     );
 
     public static void main(String[] args) {
+        ArrayList<Plane> planes = new ArrayList<>(planesBeforeSerialization);
         Airport airport = new Airport(planes);
+
+        try (FileOutputStream fileOut = new FileOutputStream("planesList.ser");
+             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+            out.writeObject(planes);
+            System.out.println("Serialized data is saved in planesList.ser");
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+
         Airport militaryAirport = new Airport(airport.getMilitaryPlanes());
         Airport passengerAirport = new Airport(airport.getPassengerPlane());
         System.out.println("Military airport sorted by max distance: " + militaryAirport
@@ -34,7 +53,6 @@ public class Runner {
         System.out.println("Passenger airport sorted by max speed: " + passengerAirport
                 .sortByMaxSpeed()
                 .toString());
-
         System.out.println("Plane with max passenger capacity: " + passengerAirport.getPassengerPlaneWithMaxPassengersCapacity());
     }
 }

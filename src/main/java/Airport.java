@@ -35,7 +35,7 @@ public class Airport {
         PassengerPlane planeWithMaxCapacity = passengerPlanes.get(0);
         for (int i = 0; i < passengerPlanes.size(); i++) {
             if (passengerPlanes.get(i).getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
-                planeWithMaxCapacity = passengerPlane       s.get(i);
+                planeWithMaxCapacity = passengerPlanes.get(i);
             }
         }
         return planeWithMaxCapacity;
@@ -126,7 +126,6 @@ public class Airport {
                 '}';
     }
 
-    //Constructor
     public Airport(List<? extends Plane> planes) {
         this.planes = planes;
     }

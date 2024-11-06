@@ -1,8 +1,10 @@
 package Planes;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-abstract public class Plane {
+abstract public class Plane implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String model;
     private int maxSpeed;
     private int maxFlightDistance;
@@ -31,19 +33,15 @@ abstract public class Plane {
         int result = this.maxLoadCapacity;
         return result;
     }
-      //todo
     @Override
     public String toString() {
         return "Plane{" +
                 "model='" + model + '\'' +
                 ", maxSpeed=" + maxSpeed +
-                ", maxFlightDist        ance=" + maxFlightDistance +
+                ", maxFlightDistance=" + maxFlightDistance +
                 ", maxLoadCapacity=" + maxLoadCapacity +
                 '}';
     }
-
-
-    ///////I don't wan't
 
     @Override
     public boolean equals(Object o) {
