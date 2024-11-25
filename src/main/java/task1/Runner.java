@@ -1,7 +1,10 @@
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
-import models.MilitaryType;
+package task1;
+
+import task1.Airport;
+import task1.Planes.MilitaryPlane;
+import task1.Planes.PassengerPlane;
+import task1.Planes.Plane;
+import task1.models.MilitaryType;
 
 import java.util.Arrays;
 import java.util.List;

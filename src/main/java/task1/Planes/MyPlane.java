@@ -1,4 +1,4 @@
-package Planes;
+package task1.Planes;
 
 public class MyPlane  extends Plane {
     public MyPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
