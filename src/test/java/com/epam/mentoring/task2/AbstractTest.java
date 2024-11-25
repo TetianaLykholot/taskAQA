@@ -1,4 +1,4 @@
-package com.epam.mentoring.taf;
+package com.epam.mentoring.task2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +8,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class AbstractTest {
-    protected final static String API_URL = "https://restful-booker.herokuapp.com/booking";
     protected final static String baseUrl = "https://www.saucedemo.com/";
     protected WebDriver driver;
 
@@ -32,8 +30,6 @@ public class AbstractTest {
         driver.get(baseUrl);
         wait = new WebDriverWait(driver, 2);
     }
-
-
 
     @AfterClass
     public void terminate() {

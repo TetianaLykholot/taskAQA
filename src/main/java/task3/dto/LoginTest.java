@@ -20,13 +20,9 @@ public class LoginTest {
 
    @Test
     public void testValidLogin() {
-        // Use DTO for test data
         LoginDTO validUser = new LoginDTO("standard_user", "secret_sauce");
-
-        // Perform login
         loginPage.login(validUser);
 
-        // Verify login success (e.g., check for redirection or element presence)
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(driver.getCurrentUrl(), expectedUrl, "User was not redirected to the inventory page.");
     }

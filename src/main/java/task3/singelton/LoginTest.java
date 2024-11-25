@@ -23,7 +23,6 @@ public class LoginTest {
        String expectedUrl = "https://www.saucedemo.com/inventory.html";
        assert driver.getCurrentUrl().equals(expectedUrl) : "Login failed";
     }
-
     @AfterClass
     public void closeDriver(){
         WebdriverInstance.getInstance().quitDriver();

@@ -1,4 +1,4 @@
-package com.epam.mentoring.taf;
+package com.epam.mentoring.task2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,7 +19,6 @@ public class UserSignInTest extends AbstractTest{
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='active_option']")));
         String sortingActualButtonName = driver.findElement(By.xpath("//span[@class='active_option']")).getText();
         Assert.assertEquals(sortingActualButtonName, sortingButtonName);
-
     }
 
     @Test

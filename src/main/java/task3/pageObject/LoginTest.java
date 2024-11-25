@@ -25,7 +25,6 @@ public class LoginTest {
        assert driver.getCurrentUrl().contains("inventory"): "Login failed";
 
     }
-
     @AfterMethod
     public void tearDown() {
         DriverManager.quitDriver();

@@ -22,12 +22,10 @@ public class LoginTest {
 
     @Test
     public void testSuccessfulLogin() {
-        // Perform actions
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLogin();
 
-        // Assert successful login (example: check URL or element visibility)
         Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));
     }
 

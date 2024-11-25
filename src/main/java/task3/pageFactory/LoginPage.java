@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     WebDriver driver;
-
-    // Locators using @FindBy annotations
     @FindBy(id = "user-name")
     private WebElement userName;
 
@@ -24,7 +22,6 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    // Methods to interact with the page
     public void enterUsername(String username) {
         userName.sendKeys(username);
     }

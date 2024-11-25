@@ -24,15 +24,12 @@ public class SignInPage {
         PageFactory.initElements(driver, this);
     }
 
-
-
     public void enterUsername(String username) {
         userName.sendKeys(username);
     }
     public void enterPassword(String password) {
         passwordField.sendKeys(password);
     }
-
     public void clickLogin() {
         logInButton.click();
     }

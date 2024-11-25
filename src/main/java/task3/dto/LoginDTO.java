@@ -4,13 +4,11 @@ public class LoginDTO {
     private String username;
     private String password;
 
-    // Constructor
     public LoginDTO(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    // Getters
     public String getUsername() {
         return username;
     }

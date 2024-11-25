@@ -13,9 +13,8 @@ public class LoginTest {
 
    @BeforeMethod
     public void setUp() {
-        // Set up WebDriver (ChromeDriver in this case)
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");  // Run in headless mode for CI/CD
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
 
@@ -36,16 +35,13 @@ public class LoginTest {
 
     @Test
     public void testInvalidLogin() {
-        // Build a User object with invalid credentials
         User user = new UserBuilder()
                 .withUsername("invalid_user")
                 .withPassword("wrong_password")
                 .build();
 
-        // Perform login
         loginPage.loginAsUser(user);
 
-        // Assert error message is displayed
         String errorMessage = loginPage.getErrorMessage();
        assert (errorMessage.contains("Epic sadface"));
     }

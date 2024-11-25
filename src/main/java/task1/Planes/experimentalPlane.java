@@ -1,7 +1,7 @@
-package Planes;
+package task1.Planes;
 
-import models.ClassificationLevel;
-import models.ExperimentalTypes;
+import task1.models.ClassificationLevel;
+import task1.models.ExperimentalTypes;
 
 public class experimentalPlane extends Plane{
 

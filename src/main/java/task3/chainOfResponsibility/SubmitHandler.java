@@ -12,7 +12,6 @@ public class SubmitHandler extends Handler{
             loginButton.click();
             System.out.println("Clicked login button.");
 
-            // Check for login success
             if (driver.getCurrentUrl().contains("inventory.html")) {
                 System.out.println("Login successful!");
                 return true;

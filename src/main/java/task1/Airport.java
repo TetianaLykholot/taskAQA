@@ -1,8 +1,10 @@
-import Planes.experimentalPlane;
-import models.MilitaryType;
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
+package task1;
+
+import task1.Planes.experimentalPlane;
+import task1.models.MilitaryType;
+import task1.Planes.MilitaryPlane;
+import task1.Planes.PassengerPlane;
+import task1.Planes.Plane;
 
 import java.util.*;
 
@@ -99,7 +101,7 @@ public class Airport {
 
     /**
      * Sorts by max speed
-     * @return Airport
+     * @return task1.Airport
      */
     public Airport sortByMaxSpeed() {
         Collections.sort(planes, new Comparator<Plane>() {
@@ -133,7 +135,7 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "Airport{" +
+        return "task1.Airport{" +
                 "Planes=" + planes.toString() +
                 '}';
     }
