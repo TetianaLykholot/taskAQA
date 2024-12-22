@@ -1,9 +1,13 @@
 package Planes;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import models.MilitaryType;
 
 import java.util.Objects;
-
+@Setter
+@Getter
 public class MilitaryPlane extends Plane{
 
     private MilitaryType type;
@@ -11,10 +15,6 @@ public class MilitaryPlane extends Plane{
     public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.type = type;
-    }
-
-    public MilitaryType getType() {
-        return type;
     }
 
     @Override
@@ -27,8 +27,7 @@ public class MilitaryPlane extends Plane{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MilitaryPlane)) return false;
-        if (!super.equals(o)) return false;
+        if (!(o instanceof MilitaryPlane)|| !super.equals(o)) return false;
         MilitaryPlane that = (MilitaryPlane) o;
         return type == that.type;
     }
