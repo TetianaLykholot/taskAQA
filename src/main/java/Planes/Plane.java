@@ -1,9 +1,16 @@
 package Planes;
 
-import java.util.Objects;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-abstract public class Plane {
-    String model;
+import java.io.Serializable;
+
+@Setter
+@Getter
+abstract public class Plane implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String model;
     private int maxSpeed;
     private int maxFlightDistance;
     private int maxLoadCapacity;
@@ -15,46 +22,13 @@ abstract public class Plane {
         this.maxLoadCapacity = maxLoadCapacity;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public int getMS() {
-        return maxSpeed;
-    }
-
-    public int Get_Max_Flight_Distance() {
-        return maxFlightDistance;
-    }
-
     public int getMinLoadCapacity() {
         int result = this.maxLoadCapacity;
         return result;
     }
 
-    @Override
     public String toString() {
-        return "Plane{" +
-                "model='" + model + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Plane)) return false;
-        Plane plane = (Plane) o;
-        return maxSpeed == plane.maxSpeed &&
-                maxFlightDistance == plane.maxFlightDistance &&
-                maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(model, plane.model);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        return "Plane(model=" + this.getModel() + ", maxSpeed=" + this.getMaxSpeed() + ", " +
+                "maxFlightDistance=" + this.getMaxFlightDistance() + ", maxLoadCapacity=" + this.getMaxLoadCapacity() + ")";
     }
 }
