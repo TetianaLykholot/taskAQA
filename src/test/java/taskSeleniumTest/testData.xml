@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="suite">
+    <test name="demo1">
+        <parameter name="book"
+                   value="Thinking in Java: The Definitive Introduction to Object-Oriented Programming in the Language of the World-Wide Web, 3rd Edition"/>
+        <classes>
+            <class name="taskSeleniumTest.AmazonTest"/>
+        </classes>
+    </test>
+    <test name="demo2">
+        <parameter name="book" value="Think Java: How to Think Like a Computer Scientist"/>
+        <classes>
+            <class name="taskSeleniumTest.AmazonTest"/>
+        </classes>
+    </test>
+    <test name="demo3">
+        <parameter name="book" value="Java: Learn Java in One Day and Learn It Well. Java for
+    Beginners with Hands-on Project. (Learn Coding Fast with Hands-On Project)"/>
+        <classes>
+            <class name="taskSeleniumTest.AmazonTest"/>
+        </classes>
+    </test>
+</suite>
