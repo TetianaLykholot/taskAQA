@@ -16,6 +16,7 @@ public class AmazonTest extends BaseTest {
     @Test(dataProvider = "books", dataProviderClass = DataProviderBooks.class)
     public void checkingSearchResult(String bookResult) {
         Actions action = new Actions(driver);
+        driver.get("https://www.bookdepository.com/ ");
         WebElement search = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
         action.sendKeys(search, "Thinking in Java").perform();
         JavascriptExecutor js = (JavascriptExecutor) driver;
