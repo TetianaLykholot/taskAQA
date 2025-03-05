@@ -16,8 +16,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+
+
 public class BaseTest {
 
+    String chromeDriverPath = System.getenv("CHROME_DRIVER_PATH");
     protected WebDriver driver;
 
     @Parameters("browser")
@@ -25,7 +28,7 @@ public class BaseTest {
 
     public WebDriver initializeDriver(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/Users/Tetiana_Lykholot/.cache/selenium/chromedriver/mac64/114.0.5735.90/chromedriver");
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         } else if (browser.equalsIgnoreCase("firefox")) {

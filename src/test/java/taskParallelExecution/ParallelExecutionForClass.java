@@ -4,28 +4,22 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import taskSeleniumTest.BaseTest;
 
-public class ParallelExecutionForClass extends BaseTest {
+public class ParallelExecutionForClass extends LoginPage {
     @Test
     public void loginToTheTestPageWithStandartUserForClass() {
         driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        login("standard_user", "secret_sauce" );
     }
 
     @Test
     public void loginToTheTestPageWithIncorrectUserForClass() {
         driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("error_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        login("error_user", "secret_sauce" );
     }
 
     @Test
     public void loginToTheTestPageWithLockedOutUserForClass() {
         driver.get("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("locked_out_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
+        login("locked_out_user", "secret_sauce" );
     }
 }
