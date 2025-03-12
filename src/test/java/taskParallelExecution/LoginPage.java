@@ -3,9 +3,9 @@ package taskParallelExecution;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import taskSeleniumTest.BaseTest;
 
-public class LoginPage extends BaseTest {
+public class LoginPage extends WriteToFile {
+
     @FindBy(id = "username")
     private WebElement usernameInput;
 
@@ -33,7 +33,17 @@ public class LoginPage extends BaseTest {
         enterUsername(username);
         enterPassword(password);
         clickLoginButton();
+        String uniqueVariable = "Variable_" + uniqueIdGenerator.getAndIncrement();
+        threadLocalForUsers.set(uniqueVariable);
+        String logMessage =
+                " | Thread: " + Thread.currentThread().getName() +
+                " | Username: " + username +
+                " | UniqueVariable: " + threadLocalForUsers.get();
+
+        writeToFile(logMessage);
     }
+
+
 
 
 
