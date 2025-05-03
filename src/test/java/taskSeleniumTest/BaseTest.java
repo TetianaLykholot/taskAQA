@@ -7,22 +7,36 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 
 import io.cucumber.junit.CucumberOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
+
 
 public class BaseTest {
 
+    String chromeDriverPath = System.getenv("CHROME_DRIVER_PATH");
     protected WebDriver driver;
 
+    @Parameters("browser")
     @BeforeClass
-    public WebDriver initializeDriver() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
+    public WebDriver initializeDriver(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+        }
         return driver;
+
     }
 
     @AfterClass
